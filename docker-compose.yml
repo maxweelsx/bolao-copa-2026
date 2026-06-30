@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:16
+    container_name: bolao-postgres
+    environment:
+      POSTGRES_USER: bolao
+      POSTGRES_PASSWORD: bolao123
+      POSTGRES_DB: bolao_copa
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7
+    container_name: bolao-redis
+    ports:
+      - "6379:6379"
+
+  mongo:
+    image: mongo:7
+    container_name: bolao-mongo
+    ports:
+      - "27017:27017"
